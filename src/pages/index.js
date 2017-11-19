@@ -8,8 +8,8 @@ class Index extends React.Component {
 
     const duotoneHeading = this.props.data.duotoneHeading.sizes
 
-    const duotone = this.props.data.duotone.resolutions
-    const grayscale = this.props.data.grayscale.resolutions
+    const duotone = this.props.data.duotone.sizes
+    const grayscale = this.props.data.grayscale.sizes
 
     return (
       <div>
@@ -17,10 +17,10 @@ class Index extends React.Component {
         <BgImage sizes={duotoneHeading} height={"500px"} />
 
         <div className="grid">
-          <Image resolutions={duotone} />
-          <Image resolutions={grayscale} />
-          <Image resolutions={grayscale} />
-          <Image resolutions={duotone} />
+          <Image sizes={duotone} />
+          <Image sizes={grayscale} />
+          <Image sizes={grayscale} />
+          <Image sizes={duotone} />
         </div>
         
       </div>
@@ -43,27 +43,25 @@ export const pageQuery = graphql`
         }
       }
     }
-    duotoneHeading: imageSharp(id: { regex: "/donut.jpg/" }) {
+    duotoneHeading: imageSharp(id: { regex: "/cupcakes.jpg/" }) {
+      sizes(
+        duotone: { highlight: "#f5e8db", shadow: "#831b4c" }
+      ) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
+    }
+    duotone: imageSharp(id: { regex: "/donut.jpg/" }) {
       sizes(
         duotone: { highlight: "#f5cedb", shadow: "#3c6df0" }
       ) {
         ...GatsbyImageSharpSizes_tracedSVG
       }
     }
-    duotone: imageSharp(id: { regex: "/donut.jpg/" }) {
-      resolutions(
-        duotone: { highlight: "#f5cedb", shadow: "#3c6df0" }
-        width: 500
-      ) {
-        ...GatsbyImageSharpResolutions_withWebp
-      }
-    }
     grayscale: imageSharp(id: { regex: "/donut.jpg/" }) {
-      resolutions(
-        grayscale: true, 
-        width: 500
+      sizes(
+        grayscale: true
       ) {
-        ...GatsbyImageSharpResolutions_withWebp
+        ...GatsbyImageSharpSizes_tracedSVG
       }
     }
   }
