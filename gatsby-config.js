@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Jen Downs`,
+    title: `Jen Downs Online`,
+    author: `Jen Downs`,
     siteUrl: `http://jendowns.com`,
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,6 +20,13 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-twitter`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -31,6 +40,7 @@ module.exports = {
               sizeByPixelDensity: true,
             },
           },
+          `gatsby-remark-prismjs`
         ]
       }
     },

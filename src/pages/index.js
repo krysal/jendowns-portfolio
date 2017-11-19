@@ -26,7 +26,7 @@ class Index extends React.Component {
 export default Index
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query ImageQuery {
     allImageSharp {
       edges {
         node {
