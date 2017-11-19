@@ -1,23 +1,28 @@
 import React from "react"
-import Img from "gatsby-image"
+import Image from "gatsby-image"
+import BgImage from "../components/bgImage.js"
 
 class Index extends React.Component {
   render() {
     const images = this.props.data.allImageSharp.edges
+
+    const duotoneHeading = this.props.data.duotoneHeading.sizes
+
     const duotone = this.props.data.duotone.resolutions
     const grayscale = this.props.data.grayscale.resolutions
 
     return (
-      <div className="grid">
+      <div>
 
-        <Img resolutions={duotone} />
+        <BgImage sizes={duotoneHeading} height={"500px"} />
 
-        <Img resolutions={grayscale} />
-
-        <Img resolutions={grayscale} />
-
-        <Img resolutions={duotone} />
-
+        <div className="grid">
+          <Image resolutions={duotone} />
+          <Image resolutions={grayscale} />
+          <Image resolutions={grayscale} />
+          <Image resolutions={duotone} />
+        </div>
+        
       </div>
     )
   }
@@ -36,6 +41,13 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    duotoneHeading: imageSharp(id: { regex: "/donut.jpg/" }) {
+      sizes(
+        duotone: { highlight: "#f5cedb", shadow: "#3c6df0" }
+      ) {
+        ...GatsbyImageSharpSizes_tracedSVG
       }
     }
     duotone: imageSharp(id: { regex: "/donut.jpg/" }) {
