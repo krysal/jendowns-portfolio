@@ -1,3 +1,14 @@
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-column-gap: 8px;
+  margin: 0;
+}
+
+/* --------------------------------- */
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
