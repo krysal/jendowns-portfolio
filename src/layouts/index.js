@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import './index.css'
+import './index.scss'
 
 const Header = () => (
   <div
@@ -36,10 +36,10 @@ const Header = () => (
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Jen Downs"
+      title="Cute Software"
       meta={[
-        { name: 'description', content: 'Jen Downs portfolio' },
-        { name: 'keywords', content: 'portfolio' },
+        { name: 'description', content: 'cute software' },
+        { name: 'keywords', content: 'cute' },
       ]}
     />
     <Header />
