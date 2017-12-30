@@ -6,35 +6,20 @@ import Helmet from 'react-helmet'
 import './index.scss'
 
 const Header = () => (
-  <div
-    style={{
-      background: '#3c6df0',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          oh hai
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <header>
+    <strong>title</strong>
+    <nav>nav</nav>
+  </header>
+)
+
+const Footer = () => (
+  <footer>
+    footer
+  </footer>
 )
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <div className="app">
     <Helmet
       title="Cute Software"
       meta={[
@@ -43,14 +28,8 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        padding: '0',
-      }}
-    >
-      {children()}
-    </div>
+    {children()}
+    <Footer />
   </div>
 )
 
