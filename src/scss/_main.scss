@@ -1,26 +1,79 @@
+$font-prefix: "~";
+@import 'node_modules/@ibm/plex/scss/ibm-plex.scss';
+
+$baseline: 16px;
+
+body {
+  background-color: #fafafa;
+  color: #222;
+  font-size: $baseline;
+  font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+  line-height: 2rem;
+}
+
 .app {
   display: grid;
   height: 100vh;
   grid-template-areas:
-    'headers'
+    'header'
     'main'
     'footer';
   grid-template-rows: 48px auto 96px;
 }
 
 header {
-  background-color: hotpink;
+  grid-area: header;
   display: flex;
-  justify-content: space-between;
-  grid-area: headers;
+  justify-content: right;
+  align-items: left;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    background-color: hotpink;
+    color: #fff;
+    padding: ($baseline /2) ($baseline *1.5);
+    margin: 0 $baseline;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 1.25rem;
+
+    &:hover, &:focus {
+      background-color: magenta;
+      text-decoration: none;
+    }
+  }
 }
 
 main {
-  background-color: pink;
   grid-area: main;
+  display: flex;
+  justify-content: space-around;
+  align-items: left;
+
+  &#home {
+    flex-direction: column;
+    justify-content: center;
+    max-width: 42rem;
+  }
+}
+
+.container {
+  padding: 1.5rem 3rem;
 }
 
 footer {
-  background-color: hotpink;
   grid-area: footer;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+a {
+  color: hotpink;
 }

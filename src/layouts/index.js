@@ -6,15 +6,17 @@ import Helmet from 'react-helmet'
 import './index.scss'
 
 const Header = () => (
-  <header>
-    <strong>title</strong>
-    <nav>nav</nav>
+  <header className="container">
+    <nav>
+      <a href="#">projects</a>
+      <a href="#">words</a>
+    </nav>
   </header>
 )
 
 const Footer = () => (
-  <footer>
-    footer
+  <footer className="container">
+    <small>&copy; 2018 Jen Downs</small>
   </footer>
 )
 

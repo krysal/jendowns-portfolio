@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Jen Downs <hello@jendowns.com>",
   "dependencies": {
+    "@ibm/plex": "^1.0.1",
     "eslint": "^4.11.0",
     "gatsby": "^1.9.110",
     "gatsby-image": "^1.0.24",
