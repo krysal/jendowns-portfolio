@@ -16,7 +16,7 @@ const Header = () => (
 
 const Footer = () => (
   <footer className="container">
-    <small>&copy; 2018 Jen Downs</small>
+    <small>&copy; {(new Date()).getFullYear()} Jen Downs</small>
   </footer>
 )
 

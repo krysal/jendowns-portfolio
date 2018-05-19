@@ -1,14 +1,27 @@
-$font-prefix: "~";
-@import 'node_modules/@ibm/plex/scss/ibm-plex.scss';
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600,600i');
 
 $baseline: 16px;
 
+$color--primary: hotpink;
+$color--secondary: magenta;
+$color__link: $color--primary;
+$color__text: #222;
+$color__text--inverse: white;
+
 body {
-  background-color: #fafafa;
-  color: #222;
+  color: $color__text;
   font-size: $baseline;
   font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
   line-height: 2rem;
+}
+
+a {
+  color: $color__link;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
 }
 
 .app {
@@ -34,17 +47,16 @@ nav {
   align-items: center;
 
   a {
-    background-color: hotpink;
-    color: #fff;
+    background-color: $color--primary;
+    color: $color__text--inverse;
     padding: ($baseline /2) ($baseline *1.5);
     margin: 0 $baseline;
     text-decoration: none;
     text-transform: none;
-    font-weight: 400;
     font-size: 1.25rem;
 
     &:hover, &:focus {
-      background-color: magenta;
+      background-color: $color--secondary;
       text-decoration: none;
     }
   }
@@ -53,14 +65,28 @@ nav {
 main {
   grid-area: main;
   display: flex;
-  justify-content: space-around;
   align-items: left;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 42rem;
 
-  &#home {
-    flex-direction: column;
-    justify-content: center;
-    max-width: 42rem;
+  &.container--blog {
+    max-width: 60rem;
   }
+}
+
+section {
+  width: 100%;
+}
+
+pre {
+  width: 100%;
+  overflow: auto;
+  padding: 1.5rem 3rem;
+  background-color: $color--primary;
+  color: $color__text--inverse;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .container {
@@ -72,8 +98,4 @@ footer {
   display: flex;
   justify-content: left;
   align-items: left;
-}
-
-a {
-  color: hotpink;
 }
