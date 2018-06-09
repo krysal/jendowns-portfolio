@@ -8,8 +8,8 @@ import './index.scss'
 const Header = () => (
   <header className="container">
     <nav>
-      <a href="#">projects</a>
-      <a href="#">words</a>
+      <Link to="/blog">projects</Link>
+      <Link to="/blog">words</Link>
     </nav>
   </header>
 )

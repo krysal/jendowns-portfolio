@@ -1,5 +1,5 @@
 ---
-path: "/styling-the-console"
+path: "/blog/styling-the-console"
 date: "2017-05-10"
 title: "Styling the Console"
 ---
