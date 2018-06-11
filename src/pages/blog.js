@@ -3,18 +3,18 @@ import Helmet from 'react-helmet';
 
 export default function Template({ data }) {
 
-  const posts = data.allMarkdownRemark.edges.map(post => {
+  const posts = data.allFile.edges.map(post => {
     return (
       <article>
-        <h3>{post.node.frontmatter.title}</h3>
-        <small>{post.node.frontmatter.date}</small>
+        <h3>{post.node.childMarkdownRemark.frontmatter.title}</h3>
+        <small>{post.node.childMarkdownRemark.frontmatter.date}</small>
       </article>
     );
   });
 
   return (
     <main className="container container--blog">
-      <Helmet title={`Jen Downs - Blog`} />
+      <Helmet title={`Jen Downs - Projects`} />
       {posts}
     </main>
   );
@@ -22,15 +22,19 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
 query Posts {
-    allMarkdownRemark {
-     edges {
-       node {
-         frontmatter {
-           title
-           date
-         }
-       }
-     }
-   }
-}
+    allFile(
+      filter: { sourceInstanceName: { eq: "posts" }, extension: { eq: "md" } }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              title
+              path
+            }
+          }
+        }
+      }
+    }
+  }
 `;

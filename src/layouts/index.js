@@ -6,10 +6,11 @@ import Helmet from 'react-helmet'
 import './index.scss'
 
 const Header = () => (
-  <header className="container">
+  <header>
+    <Link to="/" className="nav__link--home" />
     <nav>
-      <Link to="/blog">projects</Link>
-      <Link to="/blog">words</Link>
+      <Link to="/projects" className="nav__link" activeClassName="nav__link--active">projects</Link>
+      <Link to="/blog" className="nav__link" activeClassName="nav__link--active">words</Link>
     </nav>
   </header>
 )

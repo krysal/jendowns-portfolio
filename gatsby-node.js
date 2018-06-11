@@ -3,14 +3,16 @@ const path = require('path');
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+  const postTemplate = path.resolve(`src/templates/post.js`);
+  const projectTemplate = path.resolve(`src/templates/project.js`);
 
   return graphql(`{
     posts: allFile(
-      filter: { sourceInstanceName: { eq: "posts" }, extension: { eq: "md" } }
+      filter: { extension: { eq: "md" } }
     ) {
       edges {
         node {
+          sourceInstanceName
           childMarkdownRemark {
             frontmatter {
               path
@@ -26,11 +28,31 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
 
     result.data.posts.edges.forEach(({ node }) => {
-      createPage({
-        path: `${node.childMarkdownRemark.frontmatter.path}`,
-        component: blogPostTemplate,
-        context: {}
-      });
+
+      if (node.sourceInstanceName === 'posts') {
+        createPage({
+          path: `${node.childMarkdownRemark.frontmatter.path}`,
+          component: postTemplate,
+          context: {}
+        });
+      } else if (node.sourceInstanceName === 'projects') {
+        createPage({
+          path: `${node.childMarkdownRemark.frontmatter.path}`,
+          component: projectTemplate,
+          context: {}
+        });
+      }
     });
   });
 }
+
+exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators
+
+  createNodeField({
+    node,
+    name: `category`,
+    value: node.sourceInstanceName
+  })
+}
+
