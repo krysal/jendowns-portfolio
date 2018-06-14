@@ -6,13 +6,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-catch-links`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -33,7 +26,6 @@ module.exports = {
         name: `projects`,
       },
     },
-
     {
       resolve: `gatsby-source-filesystem`,
       options: {

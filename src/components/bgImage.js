@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const BgImage = styled(Image)`
   position: absolute;
-  top: 0;
+  top: -10%;
   left: 0;
   width: 100%;
   z-index: -1;

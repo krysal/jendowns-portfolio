@@ -6,17 +6,19 @@ import BgImage from '../components/BgImage';
 export default function Template({ data }) {
 
   const projects = data.projects.edges.map(project => {
+    let image = project.node.childMarkdownRemark.frontmatter.projectId;
     return (
-        <article>
-          <BgImage
-          css={{ top: 0, left: 0, right: 0, zIndex: -1 }}
-          style={{ position: `absolute` }}
-          sizes={data.imageSharp.sizes}
-          />
-          <Link to={project.node.childMarkdownRemark.frontmatter.path}>
-              <h3><span>{project.node.childMarkdownRemark.frontmatter.title}</span></h3>
-          </Link>
-        </article>
+      <article>
+        <BgImage
+        css={{ top: 0, left: 0, right: 0, zIndex: -1 }}
+        style={{ position: `absolute` }}
+        sizes={data[image].sizes}
+        />
+        <Link to={project.node.childMarkdownRemark.frontmatter.path}>
+            <h3><span>{project.node.childMarkdownRemark.frontmatter.title}</span></h3>
+            <h4><span>blah</span></h4>
+        </Link>
+      </article>
     );
   });
 
@@ -39,18 +41,46 @@ query Projects {
           frontmatter {
             title
             path
+            projectId
           }
         }
+      }
     }
   }
-  imageSharp(id: { regex: "/cah/" }) {
-      sizes(maxWidth: 900, quality: 100, duotone: {
-        highlight: "#e06359",
-        shadow: "#2f195f"
-      }) {
-        # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
-        ...GatsbyImageSharpSizes
+  cah: imageSharp(id: { regex: "/cah/" }){
+    sizes(
+      maxWidth: 900, 
+      quality: 100, 
+      duotone: {
+        highlight: "#edfafa",
+        shadow: "#4a00e0"
       }
+    ) {
+      ...GatsbyImageSharpSizes
+    }
+  }
+  wam: imageSharp(id: { regex: "/mammoth/" }){
+    sizes(
+      maxWidth: 900, 
+      quality: 100, 
+      duotone: {
+        highlight: "#edfafa",
+        shadow: "#4a00e0"
+      }
+    ) {
+      ...GatsbyImageSharpSizes
+    }
+  } 
+  gallery: imageSharp(id: { regex: "/ogre/" }){
+    sizes(
+      maxWidth: 900, 
+      quality: 100, 
+      duotone: {
+        highlight: "#edfafa",
+        shadow: "#4a00e0"
+      }
+    ) {
+      ...GatsbyImageSharpSizes
     }
   }
 }
