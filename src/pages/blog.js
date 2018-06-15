@@ -20,6 +20,30 @@ export default function Template({ data }) {
     <main className="container container--blog">
       <Helmet title={`Jen Downs - Projects`} />
       {posts}
+      <article>
+        <a href="#">
+          <h3><span>This is an article</span></h3>
+          <h4><span>date</span></h4>
+          <div className="left" />
+          <div className="bottom" />
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <h3><span>Another one</span></h3>
+          <h4><span>date</span></h4>
+          <div className="left" />
+          <div className="bottom" />
+        </a>
+      </article>
+      <article>
+        <a href="#">
+          <h3><span>Check out these WORDS</span></h3>
+          <h4><span>date</span></h4>
+          <div className="left" />
+          <div className="bottom" />
+        </a>
+      </article>
     </main>
   );
 }
