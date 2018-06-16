@@ -11,11 +11,10 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/blog`,
+        path: `${__dirname}/src/pages/posts`,
         name: `posts`,
       },
     },

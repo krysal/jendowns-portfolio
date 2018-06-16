@@ -1,7 +1,7 @@
 ---
-path: "/blog/styling-the-console"
+path: "/posts/styling-the-console"
 date: "2017-05-10"
-title: "Styling the Console"
+title: "Styling the Browser Console"
 ---
 
 If you have looked at your browser's console while on my site, you may have noticed this styled console statement:

@@ -1,14 +1,37 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-export default function Template({ data }) {
+import Link from 'gatsby-link';
 
+import { externalPosts } from './posts/externalPosts.js';
+
+export default function Template({ data }) {
   const posts = data.allFile.edges.map(post => {
     return (
       <article>
-        <a href="#">
+        <Link to={post.node.childMarkdownRemark.frontmatter.path}>
           <h3><span>{post.node.childMarkdownRemark.frontmatter.title}</span></h3>
           <h4><span>{post.node.childMarkdownRemark.frontmatter.date}</span></h4>
+          <div className="left" />
+          <div className="bottom" />
+        </Link>
+      </article>
+    )
+  });
+
+  const publishedPosts = externalPosts.map(post => {
+    return (
+      <article>
+        <a href={post.path}>
+          {post.publication !== null &&
+            <h3>
+              <span>{post.publication}</span>
+            </h3>
+          }
+          <h3>
+            <span>{post.title}</span>
+          </h3>
+          <h4><span>{post.date}</span></h4>
           <div className="left" />
           <div className="bottom" />
         </a>
@@ -20,30 +43,7 @@ export default function Template({ data }) {
     <main className="container container--blog">
       <Helmet title={`Jen Downs - Projects`} />
       {posts}
-      <article>
-        <a href="#">
-          <h3><span>This is an article</span></h3>
-          <h4><span>date</span></h4>
-          <div className="left" />
-          <div className="bottom" />
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3><span>Another one</span></h3>
-          <h4><span>date</span></h4>
-          <div className="left" />
-          <div className="bottom" />
-        </a>
-      </article>
-      <article>
-        <a href="#">
-          <h3><span>Check out these WORDS</span></h3>
-          <h4><span>date</span></h4>
-          <div className="left" />
-          <div className="bottom" />
-        </a>
-      </article>
+      {publishedPosts}
     </main>
   );
 }
