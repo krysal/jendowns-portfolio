@@ -7,10 +7,10 @@ import './index.scss'
 
 const Header = () => (
   <header>
-    <Link to="/" className="nav__link--home" />
+    <Link to="/" className="nav__link">home</Link>
     <nav>
       <Link to="/projects" className="nav__link" activeClassName="nav__link--active">projects</Link>
-      <Link to="/posts" className="nav__link" activeClassName="nav__link--active">words</Link>
+      <Link to="/posts" className="nav__link" activeClassName="nav__link--active">posts</Link>
     </nav>
   </header>
 )

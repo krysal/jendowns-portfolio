@@ -8,7 +8,7 @@ export default function Template({ data }) {
   const { markdownRemark: post } = data; 
   return (
     <main className="container container--blog__post">
-      <Helmet title={`Jen Downs - ${post.frontmatter.title}`} />
+      <Helmet title={`Jen Downs - Projects - ${post.frontmatter.title}`} />
       <Breadcrumbs source="projects" data={post} />
       <h1>{post.frontmatter.title}</h1>
     </main>

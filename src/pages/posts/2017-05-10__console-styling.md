@@ -4,7 +4,7 @@ date: "2017-05-10"
 title: "Styling the Browser Console"
 ---
 
-If you have looked at your browser's console while on my site, you may have noticed this styled console statement:
+If you open your browser's console while on this page, you'll notice this styled console statement:
 
 ![A screenshot of the console log statement in Firefox Developer tools.](//images.contentful.com/0rgsttk51848/378tgJYdOoE4ugeeKUmuUk/4fb3e494a3503d31bcf356549d5254bd/Screen_Shot_2017-04-19_at_2.49.41_PM.png)
 

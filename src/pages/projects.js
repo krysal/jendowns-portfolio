@@ -4,7 +4,6 @@ import Link from 'gatsby-link';
 import BgImage from '../components/BgImage';
 
 export default function Template({ data }) {
-
   const projects = data.projects.edges.map(project => {
     let image = project.node.childMarkdownRemark.frontmatter.projectId;
     return (
