@@ -1,45 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600,600i');
-
-$baseline: 16px;
-
-$color--primary: #22006a;
-$color--secondary: #b43e8f;
-$color__link: #75dddd;
-// $color__link: #d7306d;
-$color__text: white;
-$color__text--inverse: white;
+@import 'vars';
 
 body {
-  background: #4a00e0;
-  background: linear-gradient(90deg, #4a00e0,  #8c28e2);
-  color: $color__text;
+  background: $body__color__background--gradient-01;
+  background: linear-gradient(90deg, $body__color__background--gradient-01,  $body__color__background--gradient-02);
+  color: $body__color__text;
   font-size: $baseline;
-  font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+  font-family: $font-family--mono;
   line-height: 2rem;
   padding: $baseline $baseline 0 $baseline;
 }
 
 a {
-  color: #7cffcb;
+  color: $link__color__text;
   font-weight: 600;
   transition: color 200ms;
   text-decoration: none;
 
   &:hover, &focus {
-    color: #7cffcb;
+    color: $link__color__text;
     transition: color 200ms;
     outline-offset: 2px;
-    outline: 2px solid #7cffcb;
+    outline: 2px solid $link__color__text;
     box-shadow: none;
   }
 }
 
 .breadcrumbs span {
   padding: 0 $baseline / 1.5;
-}
-
-h1, h2, h3, h4 {
-  font-weight: 600;
 }
 
 .app {
@@ -61,41 +48,6 @@ header {
   align-items: left;
 }
 
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.nav__link {
-  background-color: $color--primary;
-  color: $color__text--inverse;
-  padding: ($baseline /2) ($baseline);
-  margin: 0 $baseline 0 0;
-  text-decoration: none;
-  text-transform: none;
-  font-size: 1.25rem;
-
-  &:last-child {
-    margin: 0;
-  }
-
-  &:hover, &:focus {
-    text-decoration: none;
-    outline: 2px solid $color__link;
-    outline-offset: 2px;
-    color: white;
-  }
-
-  &--active,
-  &--active:hover,
-  &--active:focus {
-    background-color: $color__link;
-    color: $color--primary;
-    text-decoration: none;
-  }
-}
-
 main {
   grid-area: main;
   display: flex;
@@ -113,12 +65,59 @@ main {
 }
 
 .post-content {
-  border-top: 1px solid $color__link;
   padding-top: $baseline * 2;
   margin-top: $baseline;
+  width: 100%;
+
+  &:before {
+    // based on pattern by Steve Schoger @ HeroPatterns.com
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='7' viewBox='0 0 15 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fafafa' fill-opacity='0.5'%3E%3Cpath d='M3.393 4.364a3.999 3.999 0 0 0-5.656 0 6 6 0 0 1-8.486 0l1.414-1.414a3.999 3.999 0 0 0 5.657 0 6 6 0 0 1 8.486 0 3.999 3.999 0 0 0 5.656 0 6 6 0 0 1 8.486 0 3.999 3.999 0 0 0 5.657 0l1.414 1.414a6 6 0 0 1-8.485 0 3.999 3.999 0 0 0-5.657 0 6 6 0 0 1-8.486 0zM20.02-15.021l6-6-6 6z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    content: '';
+    height: 20px;
+    width: 100%;
+    display: inline-block;
+  }
 }
 
-main.container--blog {
+.container--posts,
+.container--projects {
+  h3 {
+    padding: 0;
+    margin: $baseline $baseline;
+    text-align: left;
+    line-height: 2.2;
+
+    span {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1;
+      border-bottom: 5px solid $body__color__background--gradient-01;
+    }
+  }
+
+  h4 {
+    padding: 0;
+    margin: $baseline;
+    line-height: 1.4;
+
+    span {
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+
+  span {
+    display: inline;
+    color: $heading__color__text;
+    background-color: $heading__color__background;
+    padding: 0.45rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+}
+
+.container--posts {
   margin-top: $baseline * 3;
   display: grid;
   max-width: 90rem;
@@ -126,17 +125,13 @@ main.container--blog {
   grid-template-rows: repeat(auto-fill, 100px);
   grid-gap: $baseline / 2;
 
-  h1 {
-    margin: $baseline * 3 0 $baseline 0;
-  }
-  article {
+  .container--posts__box {
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: left;
-    color: white;
     margin: 0 ($baseline*1.5) ($baseline*1.5) 0;
     width: 380px;
     height: 300px;
@@ -170,31 +165,33 @@ main.container--blog {
     width: calc(100% - 40px);
     border: 8px solid transparent;
     margin-bottom: 40px;
-    background-color: #858ae3;
+    background-color: $box__color__background;
     background-position: center;
     text-decoration: none;
     transition: background-color 200ms ease;
+
     // background image by Steve Schoger @ HeroPatterns.com
     background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a00e0' fill-opacity='0.5'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
     &:hover,
     &:focus {
-      background-color: #46d1d1;
+      background-color: $box__color__background--hover;
       transition: background-color 200ms ease;
       outline: none;
 
-      .left {
-        background-color: #186262;
+      .container--posts__box--right {
+        background-color: $box--right__color__background--hover;
         transition: background-color 200ms ease;
       }
 
-      .bottom {
-        background-color: #0c3333;
+      .container--posts__box--bottom {
+        background-color: $box--bottom__color__background--hover;
         transition: background-color 200ms ease;
       }
     }
   }
 
-  .left {
+  .container--posts__box--right {
     position: absolute;
     top: 12px;
     left: calc(100% + 8px);
@@ -206,7 +203,8 @@ main.container--blog {
     content: "";
     transform: skewY(45deg);
     transition: background-color 200ms ease;
-    background-color: #432487;
+    background-color: $box--right__color__background;
+
     // background image by Steve Schoger @ HeroPatterns.com
     background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232a007e' fill-opacity='0.6'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     
@@ -222,8 +220,8 @@ main.container--blog {
     }
   }
 
-  .bottom {
-    background-color: $color--primary;
+  .container--posts__box--bottom {
+    background-color: $box--bottom__color__background;
     border-right-width: 7px;
     position: absolute;
     top: calc(100% + 8px);
@@ -249,126 +247,49 @@ main.container--blog {
       transform: skewX(-45deg);
     }
   }
-
-  h3 {
-    padding: 0;
-    margin: $baseline $baseline;
-    text-align: left;
-    line-height: 2.2;
-
-    span {
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 1;
-      border-bottom: 5px solid #4a00e0;
-    }
-  }
-
-  h4 {
-    padding: 0;
-    margin: $baseline;
-    line-height: 1.4;
-
-    span {
-      font-size: 20px;
-      font-weight: 300;
-    }
-  }
-
-  span {
-    display: inline;
-    color: $color--primary;
-    background-color: white;
-    padding: 0.45rem;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
 }
 
-main.container--projects {
+.container--projects {
   margin-top: $baseline;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 900px;
 
-  article {
+  .container--projects__project {
     position: relative;
     overflow: hidden;
-    background-color: transparent;
+    background-color: $project__color__background;
     width: 100%;
     height: 300px;
     margin: $baseline*2 0;
+    padding: $baseline 0;
 
     &:hover, &:focus {
-      outline: 4px solid $color__link;
+      outline: 4px solid $project__color__outline--hover;
       outline-offset: 6px;
     }
   }
 
-  a {
-    position: absolute;
+  .container--projects__project__title span {
     font-size: 42px;
     line-height: 60px;
-    font-weight: 800;
-    text-decoration: none;
+    font-weight: 300;
+  }
+
+  a {
+    position: absolute;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: left;
     z-index: 2;
-  }
 
-  h3 {
-    padding: 0;
-    margin: $baseline * 2 $baseline 0 $baseline;
-    text-align: left;
-
-    span {
-      font-weight: 300;
-      font-size: 2.5rem;
-      line-height: 1;
-      border-bottom: 5px solid #4a00e0;
+    &:hover, &:focus {
+      outline: none;
+      text-decoration: none;
     }
-  }
-
-  h4 {
-    padding: 0;
-    margin: 0 $baseline;
-    line-height: 1.4;
-
-    span {
-      font-size: 20px;
-      font-weight: 800;
-    }
-  }
-
-  span {
-    display: inline;
-    color: $color--primary;
-    background-color: white;
-    padding: 0.45rem;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
-}
-
-section {
-  width: 100%;
-}
-
-pre {
-  width: 100%;
-  overflow: auto;
-  padding: $baseline * 2 $baseline;
-  background-color: $color--primary;
-  color: #eae0ff;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-
-  code {
-    font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
   }
 }
 

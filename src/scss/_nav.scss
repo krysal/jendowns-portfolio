@@ -1,0 +1,36 @@
+@import 'vars';
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__link {
+  background-color: $nav-link__color__background;
+  color: $nav-link__color__text;
+  padding: ($baseline /2) ($baseline);
+  margin: 0 $baseline 0 0;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.25rem;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+    outline: 2px solid $nav-link__color__outline--hover;
+    outline-offset: 2px;
+    color: $nav-link__color__text--hover;
+  }
+
+  &--active,
+  &--active:hover,
+  &--active:focus {
+    background-color: $nav-link__color__background--active;
+    color: $nav-link__color__text--active;
+    text-decoration: none;
+  }
+}

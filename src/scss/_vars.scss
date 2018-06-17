@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600,600i');
+
+$color--deep-violet: #22006a;
+
+$color--ultramarine: #4a00e0;
+$color--blue-violet: #8c28e2;
+
+$color--vista-blue: #ae95ed;
+$color--turquoise: #46d1d1;
+
+$color--white: white;
+$color--lavendar: #eae0ff;
+
+// -----------
+
+$baseline: 16px;
+$font-family--mono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+
+// -----------
+
+$box__color__background: $color--vista-blue;
+$box--right__color__background: darken($box__color__background, 20%);
+$box--bottom__color__background: darken($box__color__background, 40%);
+
+$box__color__background--hover: $color--turquoise;
+$box--right__color__background--hover: darken($box__color__background--hover, 20%);
+$box--bottom__color__background--hover: darken($box__color__background--hover, 40%);
+
+$project__color__background: transparent;
+$project__color__outline--hover: $color--turquoise;
+
+$nav-link__color__background: $color--deep-violet;
+$nav-link__color__background--active: $color--turquoise;
+$nav-link__color__outline--hover: $color--turquoise;
+$nav-link__color__text: $color--white;
+$nav-link__color__text--hover: $color--white;
+$nav-link__color__text--active: $color--deep-violet;
+
+$link__color__text: $color--turquoise;
+
+$body__color__background--gradient-01: $color--ultramarine;
+$body__color__background--gradient-02: $color--blue-violet;
+$body__color__text: $color--white;
+
+$code__color__background: $color--deep-violet;
+$code__color__text: $color--lavendar;
+
+$divider__color__border: $color--deep-violet;
+
+$heading__color__border: $color--ultramarine;
+$heading__color__background: $color--white;
+$heading__color__text: $color--deep-violet;

@@ -8,12 +8,12 @@ import { externalPosts } from './posts/externalPosts.js';
 export default function Template({ data }) {
   const posts = data.allFile.edges.map(post => {
     return (
-      <article key={post.node.childMarkdownRemark.frontmatter.path}>
+      <article className="container--posts__box" key={post.node.childMarkdownRemark.frontmatter.path}>
         <Link to={post.node.childMarkdownRemark.frontmatter.path}>
           <h3><span>{post.node.childMarkdownRemark.frontmatter.title}</span></h3>
           <h4><span>{post.node.childMarkdownRemark.frontmatter.date}</span></h4>
-          <div className="left" />
-          <div className="bottom" />
+          <div className="container--posts__box--right" />
+          <div className="container--posts__box--bottom" />
         </Link>
       </article>
     )
@@ -21,7 +21,7 @@ export default function Template({ data }) {
 
   const publishedPosts = externalPosts.map(post => {
     return (
-      <article key={post.path}>
+      <article className="container--posts__box" key={post.path}>
         <a href={post.path}>
           {post.publication !== null &&
             <h3>
@@ -32,15 +32,15 @@ export default function Template({ data }) {
             <span>{post.title}</span>
           </h3>
           <h4><span>{post.date}</span></h4>
-          <div className="left" />
-          <div className="bottom" />
+          <div className="container--posts__box--right" />
+          <div className="container--posts__box--bottom" />
         </a>
       </article>
     );
   });
 
   return (
-    <main className="container container--blog">
+    <main className="container container--posts">
       <Helmet title={`Jen Downs - Posts`} />
       {posts}
       {publishedPosts}
