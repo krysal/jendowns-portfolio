@@ -46,13 +46,3 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   });
 }
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
-
-  createNodeField({
-    node,
-    name: `category`,
-    value: node.sourceInstanceName
-  })
-}
-

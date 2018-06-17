@@ -8,7 +8,7 @@ import { externalPosts } from './posts/externalPosts.js';
 export default function Template({ data }) {
   const posts = data.allFile.edges.map(post => {
     return (
-      <article key={`post-`+Math.random() * (1000 - 1) + 1}>
+      <article key={post.node.childMarkdownRemark.frontmatter.path}>
         <Link to={post.node.childMarkdownRemark.frontmatter.path}>
           <h3><span>{post.node.childMarkdownRemark.frontmatter.title}</span></h3>
           <h4><span>{post.node.childMarkdownRemark.frontmatter.date}</span></h4>
@@ -21,7 +21,7 @@ export default function Template({ data }) {
 
   const publishedPosts = externalPosts.map(post => {
     return (
-      <article key={`post-`+Math.random() * (1000 - 1) + 1}>
+      <article key={post.path}>
         <a href={post.path}>
           {post.publication !== null &&
             <h3>
@@ -59,7 +59,7 @@ query Posts {
             frontmatter {
               title
               path
-              date(formatString: "DD MMMM YYYY", locale: "en")
+              date
             }
           }
         }

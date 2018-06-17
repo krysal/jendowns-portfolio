@@ -2,7 +2,7 @@
 
 $baseline: 16px;
 
-$color--primary: #2f195f;
+$color--primary: #22006a;
 $color--secondary: #b43e8f;
 $color__link: #75dddd;
 // $color__link: #d7306d;
@@ -20,8 +20,22 @@ body {
 }
 
 a {
-  color: $color__link;
+  color: #7cffcb;
   font-weight: 600;
+  transition: color 200ms;
+  text-decoration: none;
+
+  &:hover, &focus {
+    color: #7cffcb;
+    transition: color 200ms;
+    outline-offset: 2px;
+    outline: 2px solid #7cffcb;
+    box-shadow: none;
+  }
+}
+
+.breadcrumbs span {
+  padding: 0 $baseline / 1.5;
 }
 
 h1, h2, h3, h4 {
@@ -36,7 +50,7 @@ h1, h2, h3, h4 {
     'main'
     'footer';
   grid-template-rows: 48px auto 96px;
-  max-width: 1200px;
+  max-width: 1216px;
   margin: 0 auto;
 }
 
@@ -70,9 +84,12 @@ nav {
     text-decoration: none;
     outline: 2px solid $color__link;
     outline-offset: 2px;
+    color: white;
   }
 
-  &--active {
+  &--active,
+  &--active:hover,
+  &--active:focus {
     background-color: $color__link;
     color: $color--primary;
     text-decoration: none;
@@ -95,14 +112,23 @@ main {
   }
 }
 
+.post-content {
+  border-top: 1px solid $color__link;
+  padding-top: $baseline * 2;
+  margin-top: $baseline;
+}
+
 main.container--blog {
   margin-top: $baseline * 3;
   display: grid;
   max-width: 90rem;
   grid-template-columns: repeat(auto-fill, 400px);
-  grid-template-rows: repeat(8, 100px);
+  grid-template-rows: repeat(auto-fill, 100px);
   grid-gap: $baseline / 2;
 
+  h1 {
+    margin: $baseline * 3 0 $baseline 0;
+  }
   article {
     position: relative;
     overflow: hidden;
@@ -154,6 +180,7 @@ main.container--blog {
     &:focus {
       background-color: #46d1d1;
       transition: background-color 200ms ease;
+      outline: none;
 
       .left {
         background-color: #186262;
@@ -334,11 +361,15 @@ section {
 pre {
   width: 100%;
   overflow: auto;
-  padding: 1.5rem 3rem;
+  padding: $baseline * 2 $baseline;
   background-color: $color--primary;
-  color: $color__text--inverse;
+  color: #eae0ff;
   white-space: pre-wrap;
   word-wrap: break-word;
+
+  code {
+    font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+  }
 }
 
 footer {
@@ -347,4 +378,5 @@ footer {
   justify-content: left;
   align-items: left;
   margin-top: $baseline * 2;
+  font-size: 14px;
 }

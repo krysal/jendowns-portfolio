@@ -12,7 +12,8 @@ export default function Template({ data }) {
       <Helmet title={`Jen Downs - Posts - ${post.frontmatter.title}`} />
       <Breadcrumbs source="posts" data={post} />
       <h1>{post.frontmatter.title}</h1>
-      <section dangerouslySetInnerHTML={{ __html: post.html }} />
+      <small><strong>Last updated: </strong>{post.frontmatter.date}</small>
+      <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
     </main>
   );
 }
@@ -22,7 +23,7 @@ query BlogPostByPath($path: String) {
   markdownRemark(frontmatter: { path: { eq: $path } }) {
     html
     frontmatter {
-      date(formatString: "MMMM DD, YYYY")
+      date
       path
       title
     }

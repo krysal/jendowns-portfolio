@@ -1,6 +1,6 @@
 ---
 path: "/posts/styling-the-console"
-date: "2017-05-10"
+date: "10 May 2017"
 title: "Styling the Browser Console"
 ---
 

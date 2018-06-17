@@ -7,15 +7,15 @@ export default function Template({ data }) {
   const projects = data.projects.edges.map(project => {
     let image = project.node.childMarkdownRemark.frontmatter.projectId;
     return (
-      <article>
+      <article key={project.node.childMarkdownRemark.frontmatter.path}>
         <BgImage
         css={{ top: 0, left: 0, right: 0, zIndex: -1 }}
         style={{ position: `absolute` }}
         sizes={data[image].sizes}
         />
         <Link to={project.node.childMarkdownRemark.frontmatter.path}>
-            <h3><span>{project.node.childMarkdownRemark.frontmatter.title}</span></h3>
-            <h4><span>blah</span></h4>
+          <h3><span>{project.node.childMarkdownRemark.frontmatter.title}</span></h3>
+          <h4><span>blah</span></h4>
         </Link>
       </article>
     );
