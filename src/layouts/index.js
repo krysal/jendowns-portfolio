@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import { TwitterIcon, GithubIcon, CodepenIcon } from '../components/Icons'
 
 import './index.scss'
 
@@ -18,6 +19,17 @@ const Header = () => (
 const Footer = () => (
   <footer className="container">
     <small>&copy; {(new Date()).getFullYear()} Jen Downs</small>
+    <section>
+      <a className="footer__link" href="https://twitter.com/jenisora">
+        <TwitterIcon />
+      </a>
+      <a className="footer__link" href="https://github.com/jendowns">
+        <CodepenIcon />
+      </a>
+      <a className="footer__link" href="https://codepen.io/jendowns">
+        <GithubIcon />
+      </a>
+    </section>
   </footer>
 )
 

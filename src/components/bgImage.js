@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'gatsby-image'
 import styled from 'styled-components'
 
