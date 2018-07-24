@@ -35,13 +35,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           component: postTemplate,
           context: {}
         });
-      } else if (node.sourceInstanceName === 'projects') {
+      } 
+      /*
+      else if (node.sourceInstanceName === 'projects') {
         createPage({
           path: `${node.childMarkdownRemark.frontmatter.path}`,
           component: projectTemplate,
           context: {}
         });
       }
+      */
     });
   });
 }

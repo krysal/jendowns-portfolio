@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Link from 'gatsby-link';
 import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Template({ data }) {

@@ -1,5 +1,5 @@
 ---
-path: "/projects/art-gallery"
+path: "http://jessiedowns.com/"
 title: "Art Gallery"
 projectId: "gallery"
 ---

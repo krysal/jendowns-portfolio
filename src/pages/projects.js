@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
 import BgImage from '../components/BgImage';
 
 export default function Template({ data }) {
@@ -13,9 +12,9 @@ export default function Template({ data }) {
         style={{ position: `absolute` }}
         sizes={data[image].sizes}
         />
-        <Link to={project.node.childMarkdownRemark.frontmatter.path}>
+        <a title={project.node.childMarkdownRemark.frontmatter.title} href={project.node.childMarkdownRemark.frontmatter.path}>
           <h3 className="container--projects__project__title"><span>{project.node.childMarkdownRemark.frontmatter.title}</span></h3>
-        </Link>
+        </a>
       </article>
     );
   });

@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import Link from 'gatsby-link';
 
-import { externalPosts } from './posts/externalPosts.js';
+import { externalPosts } from '../../data/externalPosts';
 
 export default function Template({ data }) {
   const posts = data.allFile.edges.map(post => {
