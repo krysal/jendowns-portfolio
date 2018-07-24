@@ -26,6 +26,7 @@ const Header = () => (
       <meta property="twitter:image" content="https://jendowns.com/images/workspace.png" />
       <meta property="twitter:image:alt" content="A workspace with a macbook and a cup of tea." />
       <meta property="twitter:description" content="Jen shares her thoughts about front end development + design and her current projects." />
+      <link href="favicon.png" rel="shortcut icon" type="image/png" data-icon-attribution="Icon from Twemoji (https://twemoji.twitter.com/) and licensed CC BY 4.0" />
     </Helmet>
     <Link to="/" className="nav__link">home</Link>
     <nav>
@@ -53,13 +54,7 @@ const Footer = () => (
 
 const TemplateWrapper = ({ children }) => (
   <div className="app">
-    <Helmet
-      title="Cute Software"
-      meta={[
-        { name: 'description', content: 'cute software' },
-        { name: 'keywords', content: 'cute' },
-      ]}
-    />
+    <Helmet title="Code by Jen Downs" />
     <Header />
     {children()}
     <Footer />
