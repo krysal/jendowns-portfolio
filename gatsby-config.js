@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Cute Software`,
-    author: `JD`,
-    siteUrl: `https://cute.software`,
+    title: `Code by Jen Downs`,
+    author: `Jen Downs`,
+    siteUrl: `https://jendowns.com`,
+    description: `Jen shares her thoughts about front end development + design and her current projects.`
   },
   plugins: [
     `gatsby-plugin-catch-links`,
