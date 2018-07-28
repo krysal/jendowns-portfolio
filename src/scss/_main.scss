@@ -84,26 +84,44 @@ main {
 .container--projects {
   h3 {
     padding: 0;
-    margin: $baseline $baseline;
     text-align: left;
-    line-height: 2.2;
+    line-height: 1.6;
+    margin: $baseline/2;
+
+    @media (min-width: 1220px) {
+      line-height: 2.2;
+      margin: $baseline;
+    }
 
     span {
       font-weight: 700;
-      font-size: 22px;
+      font-size: 16px;
       line-height: 1;
       border-bottom: 5px solid $body__color__background--gradient-01;
+
+      @media (min-width: 1220px) {
+        font-size: 22px;
+      }
     }
   }
 
   h4 {
     padding: 0;
-    margin: $baseline;
     line-height: 1.4;
+    margin: $baseline*1.5 $baseline/2;
+
+    @media (min-width: 1220px) {
+      line-height: 2;
+      margin: $baseline*1.5 $baseline;
+    }
 
     span {
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 300;
+
+      @media (min-width: 1220px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -122,7 +140,7 @@ main {
   display: grid;
   width: 100%;
   max-width: 100vw;
-  grid-template-columns: repeat(auto-fill, 400px);
+  grid-template-columns: repeat(auto-fill, 250px);
   grid-gap: $baseline / 2;
 
   .container--posts__box {
@@ -133,12 +151,13 @@ main {
     justify-content: left;
     align-items: left;
     margin: 0 ($baseline*1.5) ($baseline*1.5) 0;
-    width: 350px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 
   @media (min-width: 1220px) {
     max-width: 90rem;
+    grid-template-columns: repeat(auto-fill, 400px);
     grid-template-rows: repeat(auto-fill, 100px);
 
     .container--posts__box {    
@@ -169,7 +188,9 @@ main {
 
   a {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-width: 8em;
     height: calc(100% - 40px);
     width: calc(100% - 40px);
@@ -182,6 +203,10 @@ main {
 
     // background image by Steve Schoger @ HeroPatterns.com
     background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a00e0' fill-opacity='0.5'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+    @media (min-width: 1220px) {
+      display: inline-block;
+    }
 
     &:hover,
     &:focus {
@@ -306,10 +331,15 @@ main {
 footer {
   grid-area: footer;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: left;
   margin-top: $baseline * 2;
   font-size: 14px;
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+  }
 
   .footer__icon-wrapper {
     display: flex;
@@ -319,6 +349,10 @@ footer {
 
   a {
     margin-left: $baseline * 1.5;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &:hover,
     &:focus {

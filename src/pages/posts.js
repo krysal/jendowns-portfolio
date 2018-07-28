@@ -23,11 +23,6 @@ export default function Template({ data }) {
     return (
       <article className="container--posts__box" key={post.path}>
         <a href={post.path}>
-          {post.publication !== null &&
-            <h3>
-              <span>{post.publication}</span>
-            </h3>
-          }
           <h3>
             <span>{post.title}</span>
           </h3>
