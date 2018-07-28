@@ -331,15 +331,10 @@ main {
 footer {
   grid-area: footer;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: left;
   margin-top: $baseline * 2;
   font-size: 14px;
-
-  @media (min-width: 500px) {
-    flex-direction: row;
-  }
 
   .footer__icon-wrapper {
     display: flex;
@@ -348,7 +343,7 @@ footer {
   }
 
   a {
-    margin-left: $baseline * 1.5;
+    margin-left: $baseline/1.5;
 
     &:first-child {
       margin-left: 0;
@@ -365,6 +360,17 @@ footer {
 
     svg {
       fill: $body__color__text;
+      height: 16px;
+      width: 16px;
+    }
+
+    @media (min-width: 480px) {
+      margin-left: $baseline * 1.5;
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }
