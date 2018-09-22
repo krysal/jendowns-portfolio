@@ -42,10 +42,10 @@ const Footer = () => (
       <a className="footer__link" href="https://twitter.com/jenisora">
         <TwitterIcon />
       </a>
-      <a className="footer__link" href="https://github.com/jendowns">
+      <a className="footer__link" href="https://codepen.io/jendowns">
         <CodepenIcon />
       </a>
-      <a className="footer__link" href="https://codepen.io/jendowns">
+      <a className="footer__link" href="https://github.com/jendowns">
         <GithubIcon />
       </a>
     </section>
