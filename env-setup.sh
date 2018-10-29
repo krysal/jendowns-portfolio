@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-# if [[ "$(uname)" != "Darwin" ]]
-# then
-#   echo "This script only works on MacOS!"
-#   exit 1
-# fi
-
 test "$(uname)" == "Darwin" || { echo >&2 "Install script only compatible with MacOS."; exit 1; }
 type brew > /dev/null 2>&1 || { echo >&2 "Install script prerequisite: Homebrew must be installed."; exit 1; }
 brew ls --versions nvm > /dev/null || { echo >&2 "Install script prerequisite: NVM must be installed via Homebrew."; exit 1; }
