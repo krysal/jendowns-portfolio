@@ -32,6 +32,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "preinstall": "echo \"You may want to run \"source ./env-setup.sh\" first if you're not using an LTS node version.\"",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
