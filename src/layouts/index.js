@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import { TwitterIcon, GithubIcon, CodepenIcon } from '../components/Icons'
+import { TwitterIcon, GithubIcon, CodepenIcon, KeybaseIcon } from '../components/Icons'
 
 import './index.scss'
 
@@ -47,6 +47,9 @@ const Footer = () => (
       </a>
       <a className="footer__link" href="https://github.com/jendowns">
         <GithubIcon />
+      </a>
+      <a className="footer__link" target="_blank" title="Keybase" rel="noopener" href="https://keybase.io/jendowns">
+        <KeybaseIcon />
       </a>
     </section>
   </footer>
