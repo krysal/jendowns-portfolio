@@ -9,7 +9,7 @@ class Index extends React.Component {
       >
         <h1>Hello there! 👋 </h1>
         <p>My name is <strong>Jen</strong>, I'm a front-end developer in Austin, TX.</p>
-        <p>I use code as a design tool to create compelling &amp; delightful digital experiences. 💖</p>
+        <p>I use code to create compelling &amp; delightful digital experiences. 💖</p>
       </main>
     )
   }
