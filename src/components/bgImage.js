@@ -13,7 +13,7 @@ const BgImage = styled(Image)`
   & > img {
     object-fit: cover !important;
     object-position: center center !important;
-    font-family: 'object-fit: cover !important; object-position: 0% 0% !important;' // needed for IE9+ polyfill
+    font-family: 'object-fit: cover !important; object-position: 0% 0% !important;'; // needed for IE9+ polyfill
   }
 `
 

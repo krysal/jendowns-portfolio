@@ -1,5 +1,5 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from 'react'
+import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
@@ -19,12 +19,13 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-query ProjectByPath($path: String) {
-  markdownRemark(frontmatter: { path: { eq: $path } }) {
-    html
-    frontmatter {
-      path
-      title
+  query ProjectByPath($path: String) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        path
+        title
+      }
     }
   }
-}`
+`

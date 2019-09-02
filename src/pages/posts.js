@@ -6,22 +6,28 @@ import Layout from '../components/Layout'
 import { externalPosts } from '../../data/externalPosts'
 
 export default () => {
-  const renderPosts = (data) => (
+  const renderPosts = data =>
     data.allFile.edges.map(post => {
       return (
-        <article className="container--posts__box" key={post.node.childMarkdownRemark.frontmatter.path}>
+        <article
+          className="container--posts__box"
+          key={post.node.childMarkdownRemark.frontmatter.path}
+        >
           <Link to={post.node.childMarkdownRemark.frontmatter.path}>
-            <h3><span>{post.node.childMarkdownRemark.frontmatter.title}</span></h3>
-            <h4><span>{post.node.childMarkdownRemark.frontmatter.date}</span></h4>
+            <h3>
+              <span>{post.node.childMarkdownRemark.frontmatter.title}</span>
+            </h3>
+            <h4>
+              <span>{post.node.childMarkdownRemark.frontmatter.date}</span>
+            </h4>
             <div className="container--posts__box--right" />
             <div className="container--posts__box--bottom" />
           </Link>
         </article>
       )
     })
-  )
 
-  const renderPublishedPosts = (externalPosts) => (
+  const renderPublishedPosts = externalPosts =>
     externalPosts.map(post => {
       return (
         <article className="container--posts__box" key={post.path}>
@@ -29,21 +35,25 @@ export default () => {
             <h3>
               <span>{post.title}</span>
             </h3>
-            <h4><span>{post.date}</span></h4>
+            <h4>
+              <span>{post.date}</span>
+            </h4>
             <div className="container--posts__box--right" />
             <div className="container--posts__box--bottom" />
           </a>
         </article>
       )
     })
-  )
 
   return (
     <StaticQuery
       query={graphql`
         query Posts {
           allFile(
-            filter: { sourceInstanceName: { eq: "posts" }, extension: { eq: "md" } }
+            filter: {
+              sourceInstanceName: { eq: "posts" }
+              extension: { eq: "md" }
+            }
           ) {
             edges {
               node {
@@ -57,8 +67,8 @@ export default () => {
               }
             }
           }
-        }`
-      }
+        }
+      `}
       render={data => (
         <Layout>
           <main className="container container--posts">
