@@ -66,49 +66,32 @@ const Header = () => (
   </header>
 )
 
-const Footer = () => (
-  <footer className="container">
-    <small>&copy; {new Date().getFullYear()} Jen Downs</small>
-    <section>
-      <a
-        className="footer__link"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Twitter"
-        href="https://twitter.com/jenisora"
-      >
-        <TwitterIcon />
-      </a>
-      <a
-        className="footer__link"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Codepen"
-        href="https://codepen.io/jendowns"
-      >
-        <CodepenIcon />
-      </a>
-      <a
-        className="footer__link"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Github"
-        href="https://github.com/jendowns"
-      >
-        <GithubIcon />
-      </a>
-      <a
-        className="footer__link"
-        target="_blank"
-        title="Keybase"
-        rel="noopener noreferrer"
-        href="https://keybase.io/jendowns"
-      >
-        <KeybaseIcon />
-      </a>
-    </section>
-  </footer>
-)
+const Footer = () => {
+
+  const renderFooterIcon = (title, link, icon) => (
+    <a
+      className="footer__link"
+      target="_blank"
+      rel="noopener noreferrer"
+      title={title}
+      href={link}
+    >
+      {icon}
+    </a>
+  )
+
+  return (
+    <footer className="container">
+      <small>&copy; {new Date().getFullYear()} Jen Downs</small>
+      <section>
+        {renderFooterIcon('Twitter', 'https://twitter.com/jenisora', <TwitterIcon />)}
+        {renderFooterIcon('Codepen', 'https://codepen.io/jendowns', <CodepenIcon />)}
+        {renderFooterIcon('Twitter', 'https://github.com/jendowns', <GithubIcon />)}
+        {renderFooterIcon('Twitter', 'https://keybase.io/jendowns', <KeybaseIcon />)}
+      </section>
+    </footer>
+  )
+}
 
 const TemplateWrapper = ({ children }) => (
   <div className="app">
