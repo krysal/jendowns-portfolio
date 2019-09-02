@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import { TwitterIcon, GithubIcon, CodepenIcon, KeybaseIcon } from '../components/Icons'
+import { TwitterIcon, GithubIcon, CodepenIcon, KeybaseIcon } from './Icons'
 
-import './index.scss'
+import '../scss/index.scss'
 
 const Header = () => (
   <header>
@@ -40,16 +39,16 @@ const Footer = () => (
   <footer className="container">
     <small>&copy; {(new Date()).getFullYear()} Jen Downs</small>
     <section>
-      <a className="footer__link" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/jenisora">
+      <a className="footer__link" target="_blank" rel="noopener noreferrer" title="Twitter" href="https://twitter.com/jenisora">
         <TwitterIcon />
       </a>
-      <a className="footer__link" target="_blank" rel="noopener" title="Codepen" href="https://codepen.io/jendowns">
+      <a className="footer__link" target="_blank" rel="noopener noreferrer" title="Codepen" href="https://codepen.io/jendowns">
         <CodepenIcon />
       </a>
-      <a className="footer__link" target="_blank" rel="noopener" title="Github" href="https://github.com/jendowns">
+      <a className="footer__link" target="_blank" rel="noopener noreferrer" title="Github" href="https://github.com/jendowns">
         <GithubIcon />
       </a>
-      <a className="footer__link" target="_blank" title="Keybase" rel="noopener" href="https://keybase.io/jendowns">
+      <a className="footer__link" target="_blank" title="Keybase" rel="noopener noreferrer" href="https://keybase.io/jendowns">
         <KeybaseIcon />
       </a>
     </section>
@@ -60,13 +59,9 @@ const TemplateWrapper = ({ children }) => (
   <div className="app">
     <Helmet title="Code by Jen Downs" />
     <Header />
-    {children()}
+    {children}
     <Footer />
   </div>
 )
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
 
 export default TemplateWrapper

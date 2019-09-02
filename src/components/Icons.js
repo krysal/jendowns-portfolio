@@ -26,4 +26,4 @@ const KeybaseIcon = () => {
   )
 }
 
-export default { TwitterIcon, GithubIcon, CodepenIcon, KeybaseIcon }
+export { TwitterIcon, GithubIcon, CodepenIcon, KeybaseIcon }
