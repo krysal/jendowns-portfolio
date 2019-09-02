@@ -1,10 +1,9 @@
 const path = require('path');
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   const postTemplate = path.resolve(`src/templates/post.js`);
-  const projectTemplate = path.resolve(`src/templates/project.js`);
 
   return graphql(`{
     posts: allFile(
@@ -35,16 +34,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           component: postTemplate,
           context: {}
         });
-      } 
-      /*
-      else if (node.sourceInstanceName === 'projects') {
-        createPage({
-          path: `${node.childMarkdownRemark.frontmatter.path}`,
-          component: projectTemplate,
-          context: {}
-        });
       }
-      */
     });
   });
 }

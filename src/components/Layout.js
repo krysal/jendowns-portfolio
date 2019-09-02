@@ -95,7 +95,9 @@ const Footer = () => {
 
 const TemplateWrapper = ({ children }) => (
   <div className="app">
-    <Helmet title="Code by Jen Downs" />
+    <Helmet title="Code by Jen Downs">
+      <html lang="en" />
+    </Helmet>
     <Header />
     {children}
     <Footer />
