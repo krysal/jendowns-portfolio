@@ -13,7 +13,7 @@ export default function Template({ data }) {
   )
   return (
     <Layout>
-      <Helmet title={`Jen Downs - Posts - ${post.frontmatter.title}`} />
+      <Helmet title={`${post.frontmatter.title} - Posts - Jen Downs~~`} />
       <main className="container container--blog__post">
         <Breadcrumbs source="posts" data={post} />
         <h1>{post.frontmatter.title}</h1>

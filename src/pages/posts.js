@@ -72,7 +72,7 @@ export default () => {
       render={data => (
         <Layout>
           <main className="container container--posts">
-            <Helmet title={`Jen Downs - Posts`} />
+            <Helmet title={`Posts - Jen Downs`} />
             {renderPosts(data)}
             {renderPublishedPosts(externalPosts)}
           </main>
