@@ -11,7 +11,7 @@ const Index = () => (
         </span>{' '}
       </h1>
       <p>
-        My name is <strong>Jen</strong>, I'm a front-end developer in Austin,
+        My name is <strong>Jen</strong>, and I'm a front-end developer in Austin,
         TX.
       </p>
       <p>
