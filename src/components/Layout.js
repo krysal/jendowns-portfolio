@@ -67,14 +67,14 @@ const Header = () => (
 )
 
 const Footer = () => {
-
   const renderFooterIcon = (title, link, icon) => (
     <a
+      aria-label={title}
       className="footer__link"
-      target="_blank"
-      rel="noopener noreferrer"
-      title={title}
       href={link}
+      rel="noopener noreferrer"
+      target="_blank"
+      title={title}
     >
       {icon}
     </a>
