@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import { TwitterIcon, GithubIcon, CodepenIcon, KeybaseIcon } from './Icons'
+import { TwitterIcon, GithubIcon, CodepenIcon } from './Icons'
 
 import '../scss/index.scss'
 
@@ -87,7 +87,6 @@ const Footer = () => {
         {renderFooterIcon('Twitter', 'https://twitter.com/jenisora', <TwitterIcon />)}
         {renderFooterIcon('Codepen', 'https://codepen.io/jendowns', <CodepenIcon />)}
         {renderFooterIcon('Twitter', 'https://github.com/jendowns', <GithubIcon />)}
-        {renderFooterIcon('Twitter', 'https://keybase.io/jendowns', <KeybaseIcon />)}
       </section>
     </footer>
   )
