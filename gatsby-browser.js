@@ -1,2 +1,2 @@
-// Import Prism theming styles:
-require("./src/css/prism-dracula.css")
+// Import PrismJS theming styles:
+require("./src/css/prism-theme.css")

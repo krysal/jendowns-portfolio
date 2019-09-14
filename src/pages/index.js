@@ -20,8 +20,8 @@ const Index = () => (
           💖
         </span>
         <br />
-        Run <code className="language-shell">npx jendowns</code> to see my
-        digital business card.
+        Run <code className="language-shell">$> npx jendowns</code> to see my
+        npm card.
       </p>
     </main>
   </Layout>
