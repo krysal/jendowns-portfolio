@@ -19,13 +19,13 @@ module.exports = {
         name: `posts`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/images`,
-        name: `images`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/src/images`,
+    //     name: `images`,
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -40,7 +40,14 @@ module.exports = {
               sizeByPixelDensity: true,
             },
           },
-          `gatsby-remark-prismjs`
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
         ]
       }
     },

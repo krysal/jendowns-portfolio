@@ -11,14 +11,17 @@ const Index = () => (
         </span>{' '}
       </h1>
       <p>
-        My name is <strong>Jen</strong>, and I'm a front-end developer in Austin,
-        TX.
+        My name is <strong>Jen</strong>, and I'm a front-end developer in
+        Austin, TX.
       </p>
       <p>
         I use code to create compelling &amp; delightful digital experiences.{' '}
         <span role="img" aria-label="heart">
           💖
         </span>
+        <br />
+        Run <code className="language-shell">npx jendowns</code> to see my
+        digital business card.
       </p>
     </main>
   </Layout>

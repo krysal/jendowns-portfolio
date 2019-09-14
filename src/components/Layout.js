@@ -84,9 +84,21 @@ const Footer = () => {
     <footer className="container">
       <small>&copy; {new Date().getFullYear()} Jen Downs</small>
       <section>
-        {renderFooterIcon('Twitter', 'https://twitter.com/jenisora', <TwitterIcon />)}
-        {renderFooterIcon('Codepen', 'https://codepen.io/jendowns', <CodepenIcon />)}
-        {renderFooterIcon('Twitter', 'https://github.com/jendowns', <GithubIcon />)}
+        {renderFooterIcon(
+          'Twitter',
+          'https://twitter.com/jenisora',
+          <TwitterIcon />
+        )}
+        {renderFooterIcon(
+          'Codepen',
+          'https://codepen.io/jendowns',
+          <CodepenIcon />
+        )}
+        {renderFooterIcon(
+          'Twitter',
+          'https://github.com/jendowns',
+          <GithubIcon />
+        )}
       </section>
     </footer>
   )

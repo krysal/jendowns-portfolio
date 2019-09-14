@@ -1,9 +1,9 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { Link, StaticQuery, graphql } from "gatsby";
-import Layout from "../components/Layout";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import Layout from '../components/Layout'
 
-import { externalPosts } from "../../data/externalPosts";
+import { externalPosts } from '../../data/externalPosts'
 
 export default () => {
   const renderPosts = data =>
@@ -24,7 +24,7 @@ export default () => {
           <div className="container--posts__box--bottom" />
         </Link>
       </article>
-    ));
+    ))
 
   const renderPublishedPosts = externalPosts =>
     externalPosts.map(post => (
@@ -44,7 +44,7 @@ export default () => {
           <div className="container--posts__box--bottom" />
         </a>
       </article>
-    ));
+    ))
 
   return (
     <StaticQuery
@@ -80,5 +80,5 @@ export default () => {
         </Layout>
       )}
     />
-  );
-};
+  )
+}
