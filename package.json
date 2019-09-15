@@ -23,7 +23,6 @@
     "gatsby-remark-prismjs": "^3.3.12",
     "gatsby-source-filesystem": "^2.1.19",
     "gatsby-transformer-remark": "^2.6.21",
-    "gatsby-transformer-sharp": "^2.2.13",
     "node-sass": "^4.12.0",
     "prismjs": "^1.17.1",
     "react": "^16.9.0",
@@ -37,7 +36,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && cp now.json public/",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "clean": "gatsby clean"
