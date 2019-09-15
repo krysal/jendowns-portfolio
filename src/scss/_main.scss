@@ -1,13 +1,21 @@
-@import 'vars';
+@import "vars";
 
 body {
   background: $body__color__background--gradient-01;
-  background: linear-gradient(90deg, $body__color__background--gradient-01,  $body__color__background--gradient-02);
+  background: linear-gradient(
+    90deg,
+    $body__color__background--gradient-01,
+    $body__color__background--gradient-02
+  );
   color: $body__color__text;
   font-size: $baseline;
   font-family: $font-family--mono;
   line-height: 2rem;
   padding: $baseline $baseline 0 $baseline;
+}
+
+small {
+  font-size: $baseline * 0.75;
 }
 
 a {
@@ -16,7 +24,8 @@ a {
   transition: color 200ms;
   text-decoration: none;
 
-  &:hover, &focus {
+  &:hover,
+  &focus {
     color: $link__color__text;
     transition: color 200ms;
     outline-offset: 2px;
@@ -33,9 +42,9 @@ a {
   display: grid;
   height: calc(100vh - 60px);
   grid-template-areas:
-    'header'
-    'main'
-    'footer';
+    "header"
+    "main"
+    "footer";
   grid-template-rows: 48px auto 96px;
   max-width: 1216px;
   margin: 0 auto;
@@ -74,7 +83,7 @@ main {
     // based on pattern by Steve Schoger @ HeroPatterns.com
     background-image: url("data:image/svg+xml,%3Csvg width='15' height='7' viewBox='0 0 15 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fafafa' fill-opacity='0.5'%3E%3Cpath d='M3.393 4.364a3.999 3.999 0 0 0-5.656 0 6 6 0 0 1-8.486 0l1.414-1.414a3.999 3.999 0 0 0 5.657 0 6 6 0 0 1 8.486 0 3.999 3.999 0 0 0 5.656 0 6 6 0 0 1 8.486 0 3.999 3.999 0 0 0 5.657 0l1.414 1.414a6 6 0 0 1-8.485 0 3.999 3.999 0 0 0-5.657 0 6 6 0 0 1-8.486 0zM20.02-15.021l6-6-6 6z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat-x;
-    content: '';
+    content: "";
     height: 20px;
     width: 100%;
     display: inline-block;
@@ -98,7 +107,7 @@ main {
       font-weight: 700;
       font-size: 1rem;
       line-height: 1;
-      border-bottom: 5px solid $body__color__background--gradient-01;
+      border-bottom: 5px solid transparent;
 
       @media (min-width: 1220px) {
         font-size: 22px;
@@ -109,11 +118,11 @@ main {
   h4 {
     padding: 0;
     line-height: 1.4;
-    margin: $baseline*1.5 $baseline/2;
+    margin: $baseline * 1.5 $baseline/2;
 
     @media (min-width: 1220px) {
       line-height: 2;
-      margin: $baseline*1.5 $baseline;
+      margin: $baseline * 1.5 $baseline;
     }
 
     span {
@@ -151,7 +160,7 @@ main {
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
-    margin: 0 ($baseline*1.5) ($baseline*1.5) 0;
+    margin: 0 ($baseline * 1.5) ($baseline * 1.5) 0;
     width: 250px;
     height: 250px;
   }
@@ -161,7 +170,7 @@ main {
     grid-template-columns: repeat(auto-fill, 400px);
     grid-template-rows: repeat(auto-fill, 100px);
 
-    .container--posts__box {    
+    .container--posts__box {
       width: 380px;
       height: 300px;
 
@@ -224,6 +233,12 @@ main {
         background-color: $box--bottom__color__background--hover;
         transition: background-color 200ms ease;
       }
+
+      // Article heading, date:
+      h3 span,
+      h4 span {
+        border-bottom: 5px solid $body__color__background--gradient-01;
+      }
     }
   }
 
@@ -243,7 +258,6 @@ main {
 
     // background image by Steve Schoger @ HeroPatterns.com
     background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232a007e' fill-opacity='0.6'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    
 
     &:after {
       position: absolute;
@@ -272,7 +286,7 @@ main {
     transition: background-color 200ms ease;
     // background image by: Steve Schoger @ HeroPatterns.com
     background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232a007e' fill-opacity='0.6'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    
+
     &:after {
       position: absolute;
       top: 0;
@@ -298,10 +312,11 @@ main {
     background-color: $project__color__background;
     width: 100%;
     height: 300px;
-    margin: $baseline*2 0;
+    margin: $baseline * 2 0;
     padding: $baseline 0;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       outline: 4px solid $project__color__outline--hover;
       outline-offset: 6px;
     }
@@ -322,7 +337,8 @@ main {
     justify-content: left;
     z-index: 2;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       outline: none;
       text-decoration: none;
     }
@@ -356,13 +372,16 @@ footer {
 
       svg {
         fill: $link__color__text;
+        outline-offset: 4px;
+        outline: 2px solid $link__color__text;
       }
     }
 
     svg {
       fill: $body__color__text;
-      height: 1.5rem;
-      width: 1.5rem;
+      margin: $baseline * 0.15;
+      height: $baseline * 1.75;
+      width: $baseline * 1.75;
     }
   }
 
@@ -370,11 +389,12 @@ footer {
     flex-direction: column-reverse;
 
     a {
-      margin-left: $baseline * 1.5;
+      margin-left: $baseline * 1.15;
 
       svg {
-        width: 2rem;
-        height: 2rem;
+        height: $baseline * 2;
+        width: $baseline * 2;
+        margin: 0;
       }
     }
   }

@@ -36,7 +36,7 @@ $nav-link__color__text: $color--white;
 $nav-link__color__text--hover: $color--white;
 $nav-link__color__text--active: $color--deep-violet;
 
-$link__color__text: $color--turquoise;
+$link__color__text: lighten($color--turquoise, 20%);
 
 $body__color__background--gradient-01: $color--ultramarine;
 $body__color__background--gradient-02: $color--blue-violet;
