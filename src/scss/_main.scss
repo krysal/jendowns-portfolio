@@ -12,11 +12,6 @@ body {
   font-family: $font-family--mono;
   line-height: 2rem;
   padding: $baseline $baseline 0 $baseline;
-
-  span, li, p, a, code, pre {
-    font-size: inherit;
-    line-height: inherit;
-  }
 }
 
 h1 {
@@ -66,7 +61,10 @@ a {
   grid-template-rows: 48px auto 96px;
   max-width: 1216px;
   margin: 0 auto;
-  padding: $baseline * 2;
+
+  @media (min-width: 480px) {
+    padding: $baseline * 2;
+  }
 }
 
 header {
