@@ -65,4 +65,4 @@ ZEIT Now offers [git integrations for both GitHub and GitLab](https://zeit.co/do
 
 Once I added the GitHub integration, I did not customize anything else. I liked the default settings of ZEIT Now deploying staging sites (with pushed branches) and my main production build (with merges to my main branch). But you can choose to adjust these settings if you prefer.
 
-**And that's my deployment setup!** <span role="img" aria-label="dancing woman">💃🏼</span><span role="img" aria-label="sparkle">✨</span>
+**And that's my deployment setup!** <span role="img" aria-label=""  aria-hidden="true">💃🏼</span><span role="img" aria-label="" aria-hidden="true">✨</span>
