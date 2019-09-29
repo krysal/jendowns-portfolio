@@ -40,14 +40,14 @@ a {
     margin-bottom: -2px;
   }
 
-  &:not(.anchor) {
+  &:not(.anchor):not(.footer__link) {
     border-bottom: 3px solid $link__color__text;
   }
 
   @media (min-width: 640px) {
     display: inline-block;
 
-    &:not(.anchor) {
+    &:not(.anchor):not(.footer__link) {
       border-bottom: none;
     }
 
