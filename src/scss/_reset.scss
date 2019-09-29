@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 
   // override safari text-rendering algorithm:
   -webkit-text-size-adjust: none;

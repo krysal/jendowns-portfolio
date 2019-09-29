@@ -22,8 +22,10 @@ small {
   font-size: $baseline * 0.75;
 }
 
-article {
-  margin-left: $baseline;
+@media (min-width: 640px) {
+  article {
+    margin-left: $baseline;
+  }
 }
 
 a {
@@ -32,6 +34,10 @@ a {
   font-weight: 600;
   transition: color ease-in 200ms;
   text-decoration: none;
+
+  svg.external-link {
+    fill: currentColor;
+  }
 
   &:not(.anchor) {
     border-bottom: 3px solid $link__color__text;
@@ -164,7 +170,6 @@ footer {
   margin-top: $baseline * 2;
   font-size: 0.75rem;
 
-
   small {
     display: block;
     line-height: initial;
@@ -178,7 +183,6 @@ footer {
 
   a {
     margin-left: $baseline/1.5;
-
 
     &:first-child {
       margin-left: 0;

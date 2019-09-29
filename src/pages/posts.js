@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import moment from 'moment'
 import Layout from '../components/Layout'
+import { ExternalLink } from '../components/Icons';
 
 import { externalPosts } from '../../data/externalPosts'
 
@@ -40,7 +41,7 @@ export default () => {
           return (
             <>
               <a href={post.path} target="_blank" rel="noopener noreferrer">
-                {post.title}
+                {post.title}{' '}{ExternalLink}
               </a>
               <small className="publication">{commentDecoration}{post.publication}</small>
               <small className="date">{commentDecoration}{post.date}</small>
