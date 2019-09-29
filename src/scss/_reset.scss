@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+
+  // override safari text-rendering algorithm:
+  -webkit-text-size-adjust: none;
 }
 
 html, body {

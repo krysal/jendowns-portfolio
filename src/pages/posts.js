@@ -88,7 +88,9 @@ export default () => {
         <Layout>
           <main className="container container--posts">
             <Helmet title={`Jen Downs - Posts`} />
-            <h1>things I've written</h1>
+            <h1><span role="img" aria-label="tacos">
+          💚
+        </span>{' '}Things I've written:</h1>
             {renderPosts(data)}
           </main>
         </Layout>

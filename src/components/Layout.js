@@ -60,7 +60,7 @@ const Header = () => (
         className="nav__link"
         activeClassName="nav__link--active"
       >
-        posts
+        writing
       </Link>
     </nav>
   </header>
@@ -82,7 +82,10 @@ const Footer = () => {
 
   return (
     <footer className="container">
-      <small>&copy; {new Date().getFullYear()} Jen Downs</small>
+      <section><small>&copy; {new Date().getFullYear()} Jen Downs</small>
+      <small>Made with{' '}<span role="img" aria-label="heart">
+          🌮
+        </span>{' '}in Austin, TX.</small></section>
       <section>
         {renderFooterIcon(
           'Twitter',
