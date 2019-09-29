@@ -6,7 +6,7 @@ const Index = () => (
     <main id="home" className="container">
       <h1>
         Hello there!{' '}
-        <span role="img" aria-label="wave">
+        <span role="img" aria-label="" aria-hidden="true">
           👋
         </span>{' '}
       </h1>
@@ -15,7 +15,7 @@ const Index = () => (
       </p>
       <p>
         I use code to create compelling &amp; delightful digital experiences.{' '}
-        <span role="img" aria-label="heart">
+        <span role="img" aria-label="" aria-hidden="true">
           💖
         </span>
         <br />

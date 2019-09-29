@@ -30,7 +30,7 @@ a {
   position: relative;
   color: $nav-link__color__text;
   font-weight: 600;
-  transition: color ease-in 150ms;
+  transition: color ease-in 200ms;
   text-decoration: none;
 
   &:not(.anchor) {
@@ -53,7 +53,7 @@ a {
       height: $baseline / 6;
       bottom: 0;
       z-index: -1;
-      transition: all ease-in 150ms;
+      transition: all ease-in 200ms;
     }
 
     &:hover,

@@ -82,10 +82,9 @@ const Footer = () => {
 
   return (
     <footer className="container">
-      <section><small>&copy; {new Date().getFullYear()} Jen Downs</small>
-      <small>Made with{' '}<span role="img" aria-label="heart">
-          🌮
-        </span>{' '}in Austin, TX.</small></section>
+      <section>
+        <small>&copy; {new Date().getFullYear()} Jen Downs</small>
+      </section>
       <section>
         {renderFooterIcon(
           'Twitter',
