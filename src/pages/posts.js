@@ -30,6 +30,10 @@ export default () => {
       return b.sortOrder - a.sortOrder
     })
 
+    const commentDecoration = (
+      <span aria-hidden="true">{String.fromCharCode(47) + String.fromCharCode(47) + String.fromCharCode(9)}</span>
+    )
+
     return allPosts.map(post => {
       const renderLink = () => {
         if (post.publication) {
@@ -38,8 +42,8 @@ export default () => {
               <a href={post.path} target="_blank" rel="noopener noreferrer">
                 {post.title}
               </a>
-              <small className="publication">{post.publication}</small>
-              <small className="date">{post.date}</small>
+              <small className="publication">{commentDecoration}{post.publication}</small>
+              <small className="date">{commentDecoration}{post.date}</small>
             </>
           )
         }
@@ -47,13 +51,13 @@ export default () => {
         return (
           <>
             <Link to={post.path}>{post.title}</Link>
-            <small className="date">{post.date}</small>
+            <small className="date">{commentDecoration}{post.date}</small>
           </>
         )
       }
 
       return (
-        <article aria-label={post.title} className="post" key={post.path}>
+        <article aria-label="" className="post" key={post.path}>
           {renderLink()}
         </article>
       )

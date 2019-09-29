@@ -242,9 +242,5 @@ footer {
     display: block;
     line-height: initial;
     color: lighten($color--vista-blue, 18%);
-
-    &:before {
-      content: "// ";
-    }
   }
 }

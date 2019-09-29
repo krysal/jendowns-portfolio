@@ -8,7 +8,7 @@ const Index = () => (
         Hello there!{' '}
         <span role="img" aria-label="" aria-hidden="true">
           👋
-        </span>{' '}
+        </span>
       </h1>
       <p>
         My name is <strong>Jen</strong>, and I'm a front-end developer.
