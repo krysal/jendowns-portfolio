@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": ["www.jendowns.com"],
   "builds": [
     {
       "src": "package.json",
@@ -8,6 +9,11 @@
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/.*", "status": 404, "dest": "404.html" }
+    { "src": "/.*", "status": 404, "dest": "404.html" },
+    {
+      "src": "/(.*)",
+      "status": 301,
+      "headers": { "Location": "https://jendowns.com" }
+    }
   ]
 }
