@@ -13,7 +13,7 @@
     {
       "src": "/(.*)",
       "status": 301,
-      "headers": { "Location": "https://jendowns.com" }
+      "headers": { "Location": "https://jendowns.com/$1" }
     }
   ]
 }
