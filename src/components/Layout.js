@@ -97,7 +97,7 @@ const Footer = () => {
           <CodepenIcon />
         )}
         {renderFooterIcon(
-          'Twitter',
+          'GitHub',
           'https://github.com/jendowns',
           <GithubIcon />
         )}
